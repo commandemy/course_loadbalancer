@@ -6,3 +6,5 @@ description      'Installs/Configures course_loadbalancer'
 long_description 'Installs/Configures course_loadbalancer'
 version          '0.1.0'
 
+depends 'haproxy'
+
