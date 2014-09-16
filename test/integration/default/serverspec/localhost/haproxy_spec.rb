@@ -7,24 +7,27 @@ describe 'HAProxy' do
     it { should be_running }
   end
 
+  describe file('/etc/default/haproxy') do
+    it { should be_file }
+    its(:content) { should match /ENABLED=1/ }
+  end
+
+  describe file('/etc/haproxy/haproxy.cfg') do
+    it { should be_file }
+    its(:content) { should match /app1/ }
+    its(:content) { should match /app2/ }
+  end
+
   describe command('which haproxy') do
-    it { should return_stdout /\/usr\/sbin\/haproxy/ }
+    it { should return_stdout /\/usr\/sbin\/haproxy*/ }
+  end
+
+  describe command('service haproxy') do
+    it { should return_stdout /\/etc\/init.d\/haproxy*/ }
   end
 
   describe port(80) do
     it { should be_listening }
   end
-
-  describe port(8080) do
-    it { should be_listening }
-  end
-
-  # Config file should exist
-
-  # Config file should contain
-  # - stats enable
-  # - balanace round robin
-  # - server app1 10.0.0.1:80 check
-  # - server app2 10.0.0.2:80 check
 
 end
