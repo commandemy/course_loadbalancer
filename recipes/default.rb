@@ -13,6 +13,6 @@
 
 node.default['haproxy']['httpchk'] = true
 node.default['haproxy']['x_forwarded_for'] = true
-node.default['haproxy']['app_server_role'] = "app_server"
+node.default['haproxy']['app_server_role'] = "appserver"
 
 include_recipe "haproxy::app_lb"

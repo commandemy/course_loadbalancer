@@ -7,11 +7,15 @@ describe 'HAProxy' do
     it { should be_running }
   end
 
-  describe command('service haproxy') do
-    it { should return_stdout /\/etc\/init.d\/haproxy/ }
+  describe command('which haproxy') do
+    it { should return_stdout /\/usr\/sbin\/haproxy/ }
   end
 
   describe port(80) do
+    it { should be_listening }
+  end
+
+  describe port(8080) do
     it { should be_listening }
   end
 
