@@ -7,8 +7,11 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe 'apt'
+
+# 1 Install HAProxy package
 apt_package "haproxy" do
-  action :install # see actions section below
+  action :install
 end
 
 # Copy INIT script
@@ -17,7 +20,7 @@ template "/etc/default/haproxy" do
   action :create
 end
 
-# Search Nodes (now still using variables)
+# 2 Add nodes
 servers = []
 
 #search(:node, "roles:#{node['haproxy']['role']}").each do |n|
@@ -38,6 +41,6 @@ template "/etc/haproxy/haproxy.cfg" do
 end
 
 # Start HAProxy
-execute "service haproxy restart" do
-  action :run
+service "haproxy" do
+  action :restart
 end
