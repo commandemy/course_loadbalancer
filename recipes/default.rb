@@ -23,11 +23,7 @@ end
 # 2 Add nodes
 servers = []
 
-#search(:node, "roles:#{node['haproxy']['role']}").each do |n|
-#  servers << {name: n['fqdn'], ip: n['ipaddress']}
-#end
-
-node['haproxy']['nodes'].each do |n|
+search(:node, "run_list:#{node['haproxy']['role']}").each do |n|
   servers << {name: n['fqdn'], ip: n['ipaddress']}
 end
 
