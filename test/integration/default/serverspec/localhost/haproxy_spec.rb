@@ -14,8 +14,6 @@ describe 'HAProxy' do
 
   describe file('/etc/haproxy/haproxy.cfg') do
     it { should be_file }
-    its(:content) { should match /app1/ }
-    its(:content) { should match /app2/ }
   end
 
   describe command('which haproxy') do
