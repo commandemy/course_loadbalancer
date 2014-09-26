@@ -1,0 +1,9 @@
+{
+  "id": "app2",
+  "run_list": ["role[app_server]"],
+  "automatic": {
+    "fqdn": "app2",
+    "ipaddress": "10.11.12.101",
+    "role": ["app_server"]
+  }
+}
