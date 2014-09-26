@@ -20,7 +20,7 @@ template "/etc/default/haproxy" do
   action :create
 end
 
-# 2 Add nodes
+# 2 Search for nodes
 servers = []
 
 search(:node, "role:#{node['haproxy']['role']}").each do |n|
