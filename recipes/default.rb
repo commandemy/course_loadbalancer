@@ -36,7 +36,7 @@ template "/etc/haproxy/haproxy.cfg" do
   })
 end
 
-# Start HAProxy
+# Restart HAProxy
 service "haproxy" do
   action :restart
 end
