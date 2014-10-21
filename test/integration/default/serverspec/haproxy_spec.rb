@@ -1,4 +1,7 @@
-require 'spec_helper'
+require 'serverspec'
+
+# Required by serverspec
+set :backend, :exec
 
 describe 'HAProxy' do
 
@@ -13,11 +16,11 @@ describe 'HAProxy' do
   end
 
   describe command('which haproxy') do
-    it { should return_stdout /\/usr\/sbin\/haproxy*/ }
+    its(:stdout) { should match /\/usr\/sbin\/haproxy*/ }
   end
 
   describe command('service haproxy') do
-    it { should return_stdout /\/etc\/init.d\/haproxy*/ }
+    its(:stdout) { should match /\/etc\/init.d\/haproxy*/ }
   end
 
   describe port(80) do
