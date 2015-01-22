@@ -26,5 +26,5 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[course_app::default]
+      - recipe[course_loadbalancer::default]
     attributes:
