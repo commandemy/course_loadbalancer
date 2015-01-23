@@ -29,8 +29,8 @@ describe 'HAProxy' do
 
   describe file('/etc/haproxy/haproxy.cfg') do
     it { should be_file }
-    its(:content) { should match /10.11.12.100:80/ }
-    its(:content) { should match /10.11.12.101:80/ }
+    its(:content) { should match /app1 10.11.12.100:80/ }
+    its(:content) { should match /app2 10.11.12.101:80/ }
   end
 
 end

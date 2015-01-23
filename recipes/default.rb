@@ -24,7 +24,7 @@ end
 servers = []
 
 search(:node, "role:#{node['haproxy']['role']}").each do |n|
-  servers << {name: n['fqdn'], ip: n['ipaddress']}
+  servers << {name: n['name'], ip: n['ipaddress']}
 end
 
 # Copy HAProxy config file
