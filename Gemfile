@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'berkshelf'
+gem 'berkshelf', '3.1.5'
 
 # Uncomment these lines if you want to live on the Edge:
 #
@@ -14,7 +14,7 @@ gem 'berkshelf'
 #   gem "vagrant-omnibus", github: "schisamo/vagrant-omnibus"
 # end
 
-gem 'test-kitchen'
-gem 'kitchen-vagrant'
-gem 'kitchen-openstack'
-gem 'serverspec'
+gem 'test-kitchen', '1.2.1'
+gem 'kitchen-vagrant', '0.15.0'
+gem 'kitchen-openstack', '1.7.0'
+gem 'serverspec', '2.3.1'
