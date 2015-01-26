@@ -2,7 +2,6 @@
   "id": "app1",
   "run_list": ["role[app_server]"],
   "automatic": {
-    "name": "app1",
     "ipaddress": "10.11.12.100",
     "role": ["app_server"]
   }

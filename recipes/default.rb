@@ -23,8 +23,8 @@ end
 # 2 Search for nodes
 servers = []
 
-search(:node, "role:#{node['haproxy']['role']}").each do |n|
-  servers << {name: n['name'], ip: n['ipaddress']}
+search(:node, "role:#{node['haproxy']['role']}").each_with_index do |n, i|
+  servers << {name: "app#{i}", ip: n['ipaddress']}
 end
 
 # Copy HAProxy config file
