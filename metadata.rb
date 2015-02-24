@@ -6,5 +6,5 @@ description      'Installs/Configures course_loadbalancer'
 long_description 'Installs/Configures course_loadbalancer'
 version          '0.1.0'
 
-depends 'apt'
+depends 'apt', '2.6.0'
 
